@@ -28,11 +28,11 @@ Front End
 
     a. be able to measure connection speed
 
-        - [ ] send an image file to a blob
+        - [x] send an image file to a blob
 
         - [ ] send a video file to a blob url
 
-        - [ ] send a file with an allocated size and a time stamp, then measure how long it took to load
+        - [x] send a file with an allocated size and a time stamp, then measure how long it took to load
 
         - [ ] conditionally point to a given image depending on connection
 
@@ -55,7 +55,7 @@ Front End
   The actual media player -> http://cdn.dashjs.org/latest/jsdoc/streaming_MediaPlayer.js.html
 
 - (1) https://developer.mozilla.org/en-US/docs/Web/HTML/DASH_Adaptive_Streaming_for_HTML_5_Video
-  Need to find some king of player switching algorith to choose which file to read
+  Need to find some kind of player switching algorithm to choose which file to read
 
 Netflix backend video -> https://www.youtube.com/watch?v=psQzyFfsUGU
 
@@ -68,3 +68,7 @@ Dream finish line -> https://www.npmjs.com/package/node-media-server
 - live streaming stuff: https://developer.mozilla.org/en-US/docs/Web/Guide/Audio_and_video_delivery/Live_streaming_web_audio_and_video
 
 - (2) Pointing a video tag at a blob: https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch
+
+##FFMPG
+
+- Possible way to split files into chunks -> https://unix.stackexchange.com/questions/1670/how-can-i-use-ffmpeg-to-split-mpeg-video-into-10-minute-chunks

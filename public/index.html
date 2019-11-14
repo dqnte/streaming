@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <img id="img" />
+  </body>
+  <script>
+    // gets image
+    let rate = 300;
+    const getImage = async () => {
+      const image = document.getElementById('img');
+      const xhr = new XMLHttpRequest();
+      xhr.open('GET', 'stream', true);
+      xhr.responseType = 'blob';
+      xhr.onload = function() {
+        d = new Date();
+        rate = d.getTime() - this.getResponseHeader('stamp');
+        image.src = URL.createObjectURL(this.response);
+      };
+      xhr.send();
+    };
+
+    // gets image every 3 seconds
+    setInterval(() => {
+      getImage();
+      console.log(rate);
+    }, 500);
+  </script>
+</html>
