@@ -37,7 +37,6 @@ app.get('/hello-world', (req, res, next) => {
     ]);
 
     process.stdout.on('data', data => {
-      console.log(data);
       res.send(data.toString());
     });
 
@@ -50,14 +49,13 @@ app.get('/hello-world', (req, res, next) => {
   }
 });
 
-app.get('/boxes', (req, res, next) => {
+app.get('/boxes', async (req, res, next) => {
   try {
-    const process = spawn('python', [
+    const process = await spawn('python', [
       path.join(__dirname, 'parsers/listBoxes.py'),
     ]);
 
     process.stdout.on('data', data => {
-      console.log(data);
       res.send(data.toString());
     });
 
