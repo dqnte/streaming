@@ -50,6 +50,26 @@ app.get('/hello-world', (req, res, next) => {
   }
 });
 
+app.get('/boxes', (req, res, next) => {
+  try {
+    const process = spawn('python', [
+      path.join(__dirname, 'parsers/listBoxes.py'),
+    ]);
+
+    process.stdout.on('data', data => {
+      console.log(data);
+      res.send(data.toString());
+    });
+
+    process.stderr.on('data', data => {
+      console.error(`stderr: ${data}`);
+      res.sendStatus(500);
+    });
+  } catch (err) {
+    next(err);
+  }
+});
+
 app.get('/', (err, req, res, next) => {
   res.status(500).send(err);
 });
