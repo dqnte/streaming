@@ -72,3 +72,29 @@ Dream finish line -> https://www.npmjs.com/package/node-media-server
 ##FFMPG
 
 - Possible way to split files into chunks -> https://unix.stackexchange.com/questions/1670/how-can-i-use-ffmpeg-to-split-mpeg-video-into-10-minute-chunks
+
+- Actual way -> https://blog.desgrange.net/post/2017/04/17/encode-videos-dynamic-adaptive-streaming-http.html
+
+##Medium guides on streaming ideas
+
+- https://medium.com/@eyevinntechnology/how-to-build-your-own-streaming-video-html-player-6ee85d4d078a
+
+- https://www.youtube.com/watch?v=hMtqWi_OoOU&feature=youtu.be
+
+##mp4box
+
+- segmentation tool? idk -> https://github.com/gpac/mp4box.js/#segmentation
+
+##MP4 FILE
+
+- anatomy -> https://github.com/kingsunc/AVFileParse/blob/master/doc/MP4/MP4_Movie-v2_0.pdf
+
+- another one -> http://www.programmersought.com/article/9912137617/
+
+https://github.com/kingsunc/AVFileParse/blob/master/doc/MP4/MP4_Movie-v2_0.pdf
+
+http://xhelmboyx.tripod.com/formats/mp4-layout.txt
+
+##C++
+
+- Hello World -> https://nodejs.org/api/addons.html#addons_hello_world
