@@ -1,4 +1,5 @@
 const path = require('path');
+const { spawn } = require('child_process');
 const express = require('express');
 const morgan = require('morgan');
 const fs = require('fs');
@@ -19,9 +20,31 @@ app.get('/stream', (req, res, next) => {
     const d = new Date(); // get time stamp
 
     // get chunk of file
-    const file = fs.readFileSync(path.join(__dirname, 'wp4144054.jpg'));
+    const file = fs.readFileSync(
+      path.join(__dirname, 'videos', 'wp4144054.jpg')
+    );
     res.set('stamp', [d.getTime()]);
     res.send(file);
+  } catch (err) {
+    next(err);
+  }
+});
+
+app.get('/hello-world', (req, res, next) => {
+  try {
+    const process = spawn('python', [
+      path.join(__dirname, '../scripts/read_bits.py'),
+    ]);
+
+    process.stdout.on('data', data => {
+      console.log(data);
+      res.send(data.toString());
+    });
+
+    process.stderr.on('data', data => {
+      console.error(`stderr: ${data}`);
+      res.sendStatus(500);
+    });
   } catch (err) {
     next(err);
   }
