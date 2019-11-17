@@ -20,12 +20,33 @@ def readInnerBox(bfile, outerSize):
         #     readSTTS(bfile, size)
         # elif innerType == 'stss':
         #     readSTSS(bfile, size)
+        # elif innerType == 'stsd':
+        #     readSTSD(bfile)
         # elif innerType == 'stsc':
         #     readSTSC(bfile)
-        elif innerType == 'stco':
-            readSTCO(bfile)
+        # elif innerType == 'stco':
+        #     readSTCO(bfile)
+        # elif innerType == 'ctts':
+        #     readCTTS(bfile)
         else:
             bfile.seek(int(str(boxSize)) - 8, 1)
+
+
+def readCTTS(bfile):
+    print('------ctts------')
+
+    version = int(binascii.hexlify(bfile.read(1)), 16)
+    flags = int(binascii.hexlify(bfile.read(3)), 16)
+    entries = int(binascii.hexlify(bfile.read(4)), 16)
+    print("Version", version)
+    print("Flags", flags)
+    print("Entries", entries)
+
+    for i in range(0, entries):
+        sampleCount = int(binascii.hexlify(bfile.read(4)), 16)
+        print('Sample Count', sampleCount)
+        sampleOffset = int(binascii.hexlify(bfile.read(4)), 16)
+        print('Sample Offset', sampleOffset)
 
 
 def readSTTS(bfile, outerSize):
@@ -64,6 +85,27 @@ def readSTSS(bfile, outerSize):
     print('----------------')
 
 
+def readSTSD(bfile):
+    print('------stsd------')
+    version = int(binascii.hexlify(bfile.read(1)), 16)
+    flags = int(binascii.hexlify(bfile.read(3)), 16)
+    entries = int(binascii.hexlify(bfile.read(4)), 16)
+
+    print('Version', version)
+    print('Flags', flags)
+    print('Entries', entries)
+
+    for i in range(0, entries):
+        descriptionLength = int(binascii.hexlify(bfile.read(4)), 16)
+        descriptionType = int(binascii.hexlify(bfile.read(4)), 16)
+        description = int(binascii.hexlify(
+            bfile.read(descriptionLength - 8)), 16)
+
+        print('Length', descriptionLength)
+        print('Type', descriptionType)
+        print('Description', description)
+
+
 def readSTSC(bfile):
     print('------stsc------')
     version = int(binascii.hexlify(bfile.read(1)), 16)
@@ -100,7 +142,7 @@ def readSTSZ(bfile):
     for i in range(0, entries):
         firstChunk = int(binascii.hexlify(bfile.read(4)), 16)
         samplesInChunk = int(binascii.hexlify(bfile.read(4)), 16)
-        description = int(binascii.hexlify(bfile.read(4)), 16)
+        description = int(binascii.hexlify(bfile.read(1)), 16)
         print('First Chunk', firstChunk)
         print('Samples per Chunk', samplesInChunk)
         print('Description', description)
