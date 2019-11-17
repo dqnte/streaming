@@ -95,6 +95,8 @@ https://github.com/kingsunc/AVFileParse/blob/master/doc/MP4/MP4_Movie-v2_0.pdf
 
 http://xhelmboyx.tripod.com/formats/mp4-layout.txt
 
+- detailed pdf : https://www.adobe.com/content/dam/acom/en/devnet/flv/video_file_format_spec_v10.pdf
+
 ##C++
 
 - Hello World -> https://nodejs.org/api/addons.html#addons_hello_world
