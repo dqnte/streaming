@@ -167,7 +167,7 @@ def readSTCO(bfile):
     print('----------------')
 
 
-with open(os.path.dirname(__file__) + "/../videos/betty/boop-360.mp4", "rb") as bfile:
+with open(os.path.dirname(__file__) + "/../videos/betty/boop.mp4", "rb") as bfile:
     # Seek a specific position in the file and read N bytes
     position = 0
     bfile.seek(0, 0)  # Go to beginning of the file
