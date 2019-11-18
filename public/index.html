@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <html>
   <body>
-    <img id="img" />
+    <video controls="controls">
+      <source src="boop.mp4" type="video/mp4" />
+    </video>
+    <video id="video" controls="controls" type="video/mp4"></video>
   </body>
   <script>
     // adds event listener to video tag to dynamically switch sources
@@ -16,10 +19,24 @@
       xhr.onload = function() {
         d = new Date();
         rate = d.getTime() - this.getResponseHeader('stamp');
+
         image.src = URL.createObjectURL(this.response);
       };
       xhr.send();
     };
+
+    getVideo = async () => {
+      const video = document.getElementById('video');
+      const xhr = new XMLHttpRequest();
+      xhr.open('GET', 'whole-video', true);
+      xhr.responseType = 'blob';
+      xhr.onload = function() {
+        video.src = URL.createObjectURL(this.response);
+      };
+      xhr.send();
+    };
+
+    getVideo();
 
     // gets image every 3 seconds
     setInterval(() => {
