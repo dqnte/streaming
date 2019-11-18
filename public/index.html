@@ -19,8 +19,8 @@
       xhr.onload = function() {
         d = new Date();
         rate = d.getTime() - this.getResponseHeader('stamp');
-
-        image.src = URL.createObjectURL(this.response);
+        console.log(rate);
+        // image.src = URL.createObjectURL(this.response);
       };
       xhr.send();
     };

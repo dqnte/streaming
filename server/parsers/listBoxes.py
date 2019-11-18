@@ -16,8 +16,8 @@ def readInnerBox(bfile, outerSize):
         print(innerType, boxSize)
         if innerType == 'trak' or innerType == 'mdia' or innerType == 'minf' or innerType == 'stbl':
             readInnerBox(bfile, size)
-        # elif innerType == 'stts':
-        #     readSTTS(bfile, size)
+        elif innerType == 'stts':
+             readSTTS(bfile, size)
         # elif innerType == 'stss':
         #     readSTSS(bfile, size)
         # elif innerType == 'stsd':

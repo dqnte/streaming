@@ -30,7 +30,7 @@ Front End
 
         - [x] send an image file to a blob
 
-        - [ ] send a video file to a blob url
+        - [x] send a video file to a blob url
 
         - [x] send a file with an allocated size and a time stamp, then measure how long it took to load
 
@@ -38,7 +38,7 @@ Front End
 
     b. play a video
 
-        - [ ] be able to point a video file at a blob and have it play
+        - [x] be able to point a video file at a blob and have it play
 
         - [ ] be able to switch between blobs depending on where the video is being played
 
