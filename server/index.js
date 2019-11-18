@@ -68,6 +68,15 @@ app.get('/boxes', async (req, res, next) => {
   }
 });
 
+app.get('/whole-video', (req, res, next) => {
+  try {
+    const file = fs.readFileSync(path.join(__dirname, 'videos/betty/boop.mp4'));
+    res.send(file);
+  } catch (err) {
+    next(err);
+  }
+});
+
 app.get('/', (err, req, res, next) => {
   res.status(500).send(err);
 });
