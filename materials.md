@@ -1,4 +1,4 @@
-#THE PLAN
+# THE PLAN
 
 The problem is twofold. First I need to set up the server that contains a manifest file and a movie file in different formats. This can probably be done using DASH and ffmpeg (1). From what I understand, this is only done once. The server file system is set up.
 
@@ -10,7 +10,7 @@ New plan, server is them same. On the client side, I want to be the one to choos
 
 I would also need to create blob files on the client for each chunk I get, and have a video tag point to these chunks for a specific amount of time. This can be done using some blob stuff (2).
 
-#GOALS
+# GOALS
 
 Back End
 
@@ -42,9 +42,9 @@ Front End
 
         - [ ] be able to switch between blobs depending on where the video is being played
 
-#INFO
+# INFO
 
-##Dash.js Main Docs:
+## Dash.js Main Docs:
 
 - Github: https://github.com/Dash-Industry-Forum/dash.js/
 
@@ -61,7 +61,7 @@ Netflix backend video -> https://www.youtube.com/watch?v=psQzyFfsUGU
 
 Dream finish line -> https://www.npmjs.com/package/node-media-server
 
-##God Bless Mozilla
+## God Bless Mozilla
 
 - https://developer.mozilla.org/en-US/docs/Web/Guide/Audio_and_video_delivery/Setting_up_adaptive_streaming_media_sources
 
@@ -69,7 +69,7 @@ Dream finish line -> https://www.npmjs.com/package/node-media-server
 
 - (2) Pointing a video tag at a blob: https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch
 
-##FFMPG
+## FFMPG
 
 - Possible way to split files into chunks -> https://unix.stackexchange.com/questions/1670/how-can-i-use-ffmpeg-to-split-mpeg-video-into-10-minute-chunks
 
@@ -81,11 +81,11 @@ Dream finish line -> https://www.npmjs.com/package/node-media-server
 
 - https://www.youtube.com/watch?v=hMtqWi_OoOU&feature=youtu.be
 
-##mp4box
+## mp4box
 
 - segmentation tool? idk -> https://github.com/gpac/mp4box.js/#segmentation
 
-##MP4 FILE
+## MP4 FILE
 
 - anatomy -> https://github.com/kingsunc/AVFileParse/blob/master/doc/MP4/MP4_Movie-v2_0.pdf
 
@@ -97,6 +97,6 @@ http://xhelmboyx.tripod.com/formats/mp4-layout.txt
 
 - detailed pdf : https://www.adobe.com/content/dam/acom/en/devnet/flv/video_file_format_spec_v10.pdf
 
-##C++
+## C++
 
 - Hello World -> https://nodejs.org/api/addons.html#addons_hello_world
